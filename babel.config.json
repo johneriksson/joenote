@@ -1,0 +1,14 @@
+{
+	"presets": [
+		"@babel/preset-env",
+		["@babel/preset-react", { "modules": "commonjs" }]
+	],
+	"plugins": [
+		["@babel/plugin-proposal-decorators", { "legacy": true }],
+		["@babel/plugin-proposal-class-properties", { "loose": true }],
+		"@babel/plugin-proposal-export-default-from",
+		"syntax-trailing-function-commas",
+		"transform-export-extensions",
+		"react-hot-loader/babel"
+	]
+}

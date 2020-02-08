@@ -1,0 +1,16 @@
+node_modules
+
+# Mac .DS_Store files
+.DS_Store
+
+# Webpack stats
+stats.json
+
+#VS Code
+.vscode
+
+#ESLint
+.eslintrc
+
+# Log files (like npm-debug.log)
+*.log*
