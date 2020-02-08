@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 import {
 	BrowserRouter as Router,
 	Switch,
@@ -6,9 +6,9 @@ import {
 	Link
 } from "react-router-dom";
 
-import Note from "./Note"
+import Note from "./views/Note";
 
-import "./App.css"
+import "./App.sass";
 
 export default class App extends React.Component {
 	render() {

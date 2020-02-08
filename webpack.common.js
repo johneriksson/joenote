@@ -3,6 +3,9 @@ const webpack = require("webpack");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
+
+const miniCssPlugin = { loader: MiniCssExtractPlugin.loader, options: { hmr: process.env.NODE_ENV !== "production" } };
+
 module.exports = {
 	entry: "./src/index.jsx",
 	output: {
@@ -18,13 +21,15 @@ module.exports = {
 				exclude: /node_modules/,
 				use: ["babel-loader"],
 			},
+			// SASS files
+			{
+				test: /\.s[ac]ss$/i,
+				use: [ miniCssPlugin, "css-loader", "sass-loader" ],
+			},
 			// CSS files
 			{
 				test: /\.css$/i,
-				use: [
-					{ loader: MiniCssExtractPlugin.loader, options: { hmr: process.env.NODE_ENV !== "production" } },
-					{ loader: "css-loader" },
-				],
+				use: [ miniCssPlugin, "css-loader"],
 			},
 			// Fonts
 			{
