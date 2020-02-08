@@ -14,3 +14,5 @@ stats.json
 
 # Log files (like npm-debug.log)
 *.log*
+
+build
