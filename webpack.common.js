@@ -36,6 +36,14 @@ module.exports = {
 				test: /\.(woff(2)?|ttf)(\?v=\d+\.\d+\.\d+)?$/,
 				use: ["url-loader"],
 			},
+			// SVG icons
+			{
+				test: /\.svg$/,
+				use: [
+					"babel-loader",
+					{ loader: "react-svg-loader", options: { jsx: true } }
+				],
+			},
 		],
 	},
 	plugins: [

@@ -3,44 +3,48 @@ import {
 	BrowserRouter as Router,
 	Switch,
 	Route,
-	Link
+	Link,
 } from "react-router-dom";
+import {
+	CSSTransition,
+	TransitionGroup,
+} from "react-transition-group";
 
+import Home from "./views/Home";
 import Note from "./views/Note";
 
 import "./App.sass";
 
 export default class App extends React.Component {
+	// async componentDidMount() {
+	// 	const a = await fetch("https://jsonplaceholder.typicode.com/todos/1");
+	// 	const json = await a.json();
+	// 	console.log("json", json)
+	// }
+
 	render() {
+
 		return (
 			<Router>
 				<div className="app">
-					<header>
-						<h1>JOENote - coming soon!</h1>
-						<ul>
-							<li>
-								<Link to="/">Home</Link>
-							</li>
-							<li>
-								<Link to="/about">About</Link>
-							</li>
-							<li>
-								<Link to="/notes/1">notes/1</Link>
-							</li>
-						</ul>
-					</header>
-
-					<Switch>
-						<Route path="/about">
-							<p>about</p>
-						</Route>
-						<Route path="/notes/:noteId">
-							<Note />
-						</Route>
-						<Route path="/">
-							<p>home</p>
-						</Route>
-					</Switch>
+					<Route render={({ location }) => (
+						<TransitionGroup>
+						<CSSTransition
+							key={location.key}
+							timeout={300}
+							classNames="fade"
+						>
+							<Switch location={location}>
+								<Route path="/" exact>
+									<Home />
+								</Route>
+								<Route path="/notes/:noteId">
+									<Note />
+								</Route>
+							</Switch>
+						</CSSTransition>
+					</TransitionGroup>
+					)} />
 				</div>
 			</Router>
 		);

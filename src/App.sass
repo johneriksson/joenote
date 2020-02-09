@@ -1,18 +1,47 @@
-.app > header
-	background-color: hsl(107, 41%, 76%)
-	padding: 20px
+.app
+	position: relative
 
-.app > header > h1
-	color: white
-	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3)
-	text-align: center
-	font-size: 2rem
+.view
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
 
-.app > header > ul
-	display: flex
-	justify-content: center
-	padding: 10px 0
+	& > header
+		background-color: white
+		padding: 10px 5px
+		border-bottom: 1px solid var(--text-color)
+		color: var(--text-color)
+		display: flex
+		justify-content: space-between
+		align-items: center
 
-.app > header > ul > li
-	margin: 0 10px
-	text-transform: uppercase
+		& > h1
+			text-align: center
+			font-size: 1.1rem
+		
+		.icon
+			width: 1.2rem
+			height: 1.2rem
+
+	& > .content
+		padding: 5px
+
+
+// Route transitions
+.fade-appear,
+.fade-enter
+	opacity: 0
+	z-index: 1
+
+.fade-appear-active,
+.fade-enter.fade-enter-active
+	opacity: 1
+	transition: opacity 300ms linear
+
+.fade-exit
+	opacity: 1
+
+.fade-exit.fade-exit-active
+	opacity: 0
+	transition: opacity 150ms linear
