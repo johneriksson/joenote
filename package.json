@@ -2,10 +2,11 @@
   "name": "joenote",
   "version": "0.1.0",
   "description": "Sync notes and stuff",
-  "main": "src/index.jsx",
+  "main": "backend/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --config webpack.dev.js"
+    "start-f": "webpack-dev-server --config webpack.dev.js",
+    "start-b": "nodemon ./backend/app.js"
   },
   "author": "John Eriksson",
   "license": "ISC",
@@ -28,6 +29,7 @@
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.13.1",
+    "nodemon": "^2.0.2",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "react-hot-loader": "^4.12.19",
     "react-svg-loader": "^3.0.3",
@@ -40,6 +42,8 @@
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
     "moment": "^2.24.0",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",

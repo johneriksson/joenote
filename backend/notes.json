@@ -1,0 +1,12 @@
+[
+	{
+		"id": 1,
+		"name": "Grocery list",
+		"content": "Bananas\nApples\nTomatoes\nPotatoes\nOats\nCandy\nBread"
+	},
+	{
+		"id": 2,
+		"name": "Empty note",
+		"content": ""
+	}
+]

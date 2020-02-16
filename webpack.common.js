@@ -7,7 +7,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const miniCssPlugin = { loader: MiniCssExtractPlugin.loader, options: { hmr: process.env.NODE_ENV !== "production" } };
 
 module.exports = {
-	entry: "./src/index.jsx",
+	entry: "./frontend/index.jsx",
 	output: {
 		filename: "joenote.js",
 		path: path.resolve(__dirname, "build"),
@@ -50,7 +50,7 @@ module.exports = {
 		new webpack.ContextReplacementPlugin(/moment[/\\]locale$/, /en/), // Reduce momentjs file size (by removing unused locales)
 		new MiniCssExtractPlugin({ filename: "joenote.css" }),
 		new HtmlWebpackPlugin({
-			template: "src/index.ejs",
+			template: "frontend/index.ejs",
 			minify: false,
 		}),
 	],
